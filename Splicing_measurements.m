@@ -108,14 +108,22 @@ switch mode
         if isempty(manualPart_loss), error('Data entry cancelled.'); % Raise error when not filled in correctly
         end
         
-        manualPart = cell2struct([struct2cell(manualPart_angles); struct2cell(manualPart_loss)], ...
-                                 [fieldnames(manualPart_angles); fieldnames(manualPart_loss)], 1);
+        
         
         % Measurement after the splice 
         laser.shutter(0);
         params.V_avg_after_splice = measure_average_voltage(mm, measurement_time);
         params.OP_after = params.V_avg_after_splice /Gain;
         laser.shutter(1);
+        
+        % Prooftest
+        manualPart_prooftest = get_manual_input_prooftest();
+        if isempty(manualPart_prooftest), error('Data entry cancelled.'); % Raise error when not filled in correctly
+        end
+        
+        % Combine all manual parts.
+        manualPart = cell2struct([struct2cell(manualPart_angles); struct2cell(manualPart_loss); struct2cell(manualPart_prooftest)], ...
+                         [fieldnames(manualPart_angles); fieldnames(manualPart_loss); fieldnames(manualPart_prooftest)], 1);
 
         save_splice_experiment('Splice_data.csv', manualPart, params);
 
