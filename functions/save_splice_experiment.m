@@ -6,11 +6,11 @@ function save_splice_experiment(masterFile, manualData, params)
         data = table(); % If the file doesn't exist yet, initialize an empty table.
     end
 
-    % Combine all data into a single struct
+    % Combine all data into a single struct.
     newEntry = manualData; 
     fields = fieldnames(params);
     for i = 1:length(fields)
-        val = params.(fields{i}); % Get the current value for this specific field
+        val = params.(fields{i}); % Get the current value for this specific field.
         if ischar(val) || isstring(val) % If the value is a string or characters.
             newEntry.(fields{i}) = {char(val)}; 
         else
@@ -43,20 +43,18 @@ function save_splice_experiment(masterFile, manualData, params)
  
     [data, newRow] = synchronize_table_columns(data, newRow);
 
-    % Force final column order again
+    % Force final column order again.
     existingDesired = masterOrder( ...
         ismember(masterOrder, newRow.Properties.VariableNames));
     
-    others = setdiff(newRow.Properties.VariableNames, ...
-                     existingDesired, ...
-                     'stable');
+    others = setdiff(newRow.Properties.VariableNames, existingDesired, 'stable');
     
     finalOrder = [existingDesired, others];
     
     data   = data(:, finalOrder);
     newRow = newRow(:, finalOrder);
     
-    % Append and Save
+    % Append and Save.
     updatedData = [data; newRow];
     writetable(updatedData, masterFile);
     % Print if it is succesfull.

@@ -4,7 +4,7 @@ function manualData = get_manual_input_angles()
         'L Cleave Angle(°):', 'R Cleave Angle(°):', ...
         'L Fiber Angle(°):', 'R Fiber Angle(°):'};
     
-    dlgtitle = 'Manual Splice Data Entry';
+    dlgtitle = 'Manual Cleave Data Entry';
     answer = inputdlg(prompt, dlgtitle, [1 50], {'0','0','0','0'});
     
     if isempty(answer)

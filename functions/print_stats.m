@@ -9,7 +9,6 @@ function print_stats(stats)
     fprintf('-----------------------------------------\n');
     fprintf('Actual Splice Loss Statistics:\n');
     fprintf('  Mean:    %.3f dB\n', stats.mean_loss);
-    fprintf('  Median:  %.3f dB\n', stats.median_loss);
     fprintf('  Std Dev: %.3f dB\n', stats.std_loss);
     fprintf('-----------------------------------------\n');
   

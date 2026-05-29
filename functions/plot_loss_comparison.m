@@ -4,7 +4,8 @@ function plot_loss_comparison(data)
     % 2) Percentage error bar chart mapping the estimation variance per individual splice.
     num_splices = height(data);
     
-    % Determine X-axis indexing labels (Uses 'id' column if present, otherwise row index)
+    % Determine X-axis indexing labels (Uses 'id' column if present,
+    % otherwise row index).
     if ismember('id', data.Properties.VariableNames)
         x_labels = data.id;
         x_title_str = 'Splice ID';
@@ -24,9 +25,7 @@ function plot_loss_comparison(data)
     figure('Name', 'Loss Verification & Percentage Error Analysis', 'Color', 'w', 'Position', [120, 50, 1050, 780]);
     t_layout = tiledlayout(2, 1, 'TileSpacing', 'Loose', 'Padding', 'Normal');
     
-    % =========================================================================
-    % GRAPH 1: Absolute Loss Grouped Chart (Exactly like your original)
-    % =========================================================================
+    % GRAPH 1: Absolute Loss Grouped Chart 
     nexttile;
     hBar = bar([data.Splice_loss, data.Splice_loss_machine], 'grouped', 'EdgeColor', 'none');
     hBar(1).FaceColor = [0.12, 0.47, 0.71]; % Deep Blue = True Measured Loss
@@ -49,9 +48,7 @@ function plot_loss_comparison(data)
     ax1.GridAlpha = 0.4;
     ax1.Layer = 'top';
     
-    % =========================================================================
     % GRAPH 2: Percentage Discrepancy Error Chart
-    % =========================================================================
     nexttile;
     % Uses a clean, contrasting plum/purple tone for the distinct percentage axis
     hBarPct = bar(pct_off, 'FaceColor', [0.57, 0.29, 0.62], 'EdgeColor', 'none'); 

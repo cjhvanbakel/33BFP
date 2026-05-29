@@ -1,5 +1,6 @@
 function plot_Process_diagnostics(data)
-    % PLOT_GEOMETRIC_DIAGNOSTICS Renders a single consolidated dashboard tracking
+    % PLOT_GEOMETRIC_DIAGNOSTICS Renders a single consolidated dashboard
+    % tracking.
     % Gap, Gap Offset, Overlap, Arc Time, and Arc Power vs loss.
     
     % Define data columns exactly matching your CSV table fields.
@@ -8,7 +9,7 @@ function plot_Process_diagnostics(data)
     % Set clean, readable labels for the X-axes with scientific units.
     diag_labels_x = {'Gap (\mum)', 'Gap Offset (\mum)', 'Overlap (\mum)', 'Arc Time (ms)', 'Arc Power (mA)'};
     
-    % High-contrast professional palette for separating parameter trends
+    % High-contrast professional palette for separating parameter trends.
     diag_colors = [
         0.12, 0.47, 0.71; % Classic Blue for Gap.
         0.85, 0.15, 0.15; % Crimson Red for Gap Offset.

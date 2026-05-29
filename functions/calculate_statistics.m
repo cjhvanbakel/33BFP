@@ -1,7 +1,7 @@
 function stats = calculate_statistics(data)
     % CALCULATE_STATISTICS Computes only the metrics needed for visual labels.
     
-    % Base the statistics fully on Splice data
+    % Base the statistics fully on Splice data.
     isSplice = strcmp(data.MeasurementType, 'Splice');
     spliceData = data(isSplice, :);
 
@@ -20,7 +20,6 @@ function stats = calculate_statistics(data)
     
     % Mean & Median.
     stats.mean_loss   = mean(spliceData.Splice_loss, 'omitnan');
-    stats.median_loss = median(spliceData.Splice_loss, 'omitnan');
     stats.std_loss    = std(spliceData.Splice_loss, 'omitnan');
     
     % List of Operators for the Performance Tiling.
