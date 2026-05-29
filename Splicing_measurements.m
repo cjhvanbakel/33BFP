@@ -3,6 +3,10 @@ close all; clear; clc;
 
 addpath("Instruments\");   % Add the instruments folder to the path.
 addpath("functions");      % Add the functions folder to the path.
+addpath('raw Data')
+% Data storage location
+dataFolder = "Data";
+masterFile = fullfile(dataFolder, "Splice_data.csv");
 
 % Common metadata
 params.Type     = 'Silica';
@@ -54,7 +58,7 @@ switch mode
         params.MeasurementType = 'Reference';
 
         % Reference has no splice parameters
-        params.membrane   = NaN;
+        params.Membrane   = NaN;
         params.Arc_time   = NaN;
         params.Arc_power  = NaN;
         params.Gap_offset = NaN;
@@ -74,7 +78,7 @@ switch mode
         manualPart = struct();
 
         % Save to CSV
-        save_splice_experiment('Splice_data.csv', manualPart, params);
+        save_splice_experiment(masterFile, manualPart, params);
 
 
     case 'Splice'
@@ -125,7 +129,7 @@ switch mode
         manualPart = cell2struct([struct2cell(manualPart_angles); struct2cell(manualPart_loss); struct2cell(manualPart_prooftest)], ...
                          [fieldnames(manualPart_angles); fieldnames(manualPart_loss); fieldnames(manualPart_prooftest)], 1);
 
-        save_splice_experiment('Splice_data.csv', manualPart, params);
+        save_splice_experiment(masterFile, manualPart, params);
 
 end
 
