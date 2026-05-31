@@ -1,13 +1,15 @@
 clear all
-filename = 'Patchcord_cal.csv'; 
 addpath("functions");      % Add the functions folder to the path.
+addpath("raw data");      % Add the Data folder to the path.
+filename = 'Multimeter_cal.csv'; 
+
 
 data_table = readtable(filename);
 
 loss_data = Calculate_loss(0.5, ...
                            data_table.OP_before);
 
-mu = round(mean(loss_data),1);          % Average loss.
+mu = mean(loss_data);          % Average loss.
 sigma = std(loss_data);        % Standard deviation.
 
 fprintf('Total Measurements Analysed: %d\n', length(loss_data));

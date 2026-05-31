@@ -43,9 +43,7 @@ mm.impedance(0);
 mm.set_null('VOLTage:DC');
 %% Choose measurement type
 mode = questdlg( ...
-    'Choose measurement type:', ...
-    'Measurement Type', ...
-    'Reference', 'Splice', 'Splice');
+    'Choose measurement type:','Measurement Type', 'Reference', 'Optical transmission', 'Splice', 'Splice');
 
 if isempty(mode)
     error('Data entry cancelled.');
@@ -79,7 +77,28 @@ switch mode
 
         % Save to CSV
         save_splice_experiment(masterFile, manualPart, params);
+    case 'Optical transmission'
 
+         params.MeasurementType = 'Reference';
+
+         % Reference has no splice parameters
+         params.Membrane   = NaN;
+         params.Arc_time   = NaN;
+         params.Arc_power  = NaN;
+         params.Gap_offset = NaN;
+         params.Gap        = spliceParams.Gap;
+         params.Overlap    = NaN;
+            
+         laser.shutter(0);
+         params.V_avg_before_splice = measure_average_voltage(mm, measurement_time);
+         params.OP_before = params.V_avg_before_splice / Gain;
+         laser.shutter(1);
+    
+         % Empty manual input for reference measurements
+         manualPart = struct();
+    
+         % Save to CSV
+         save_splice_experiment(masterFile, manualPart, params);
 
     case 'Splice'
 

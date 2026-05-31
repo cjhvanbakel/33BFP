@@ -1,0 +1,10 @@
+id,MeasurementType,Who,Type,Membrane,Arc_time,Arc_power,Gap_offset,Gap,Overlap,Laser_power,OP_before,V_avg_before_splice,L_cleave_angle,R_cleave_angle,L_fiber_angle,R_fiber_angle,Splice_loss_machine,MFD_mismatch,Core_bending,Axis_offset,OP_after,V_avg_after_splice,System_loss,Splice_loss,Total_loss,Result,Loss_difference,Percent_Off,Total_cleave_angle,Total_Fiber_Angle,membrane
+1,Reference,Chris,Silica,0,NaN,NaN,NaN,5,NaN,0.5,0.41268415,4.12684152,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,,NaN,NaN,NaN,NaN,NaN
+2,Reference,Chris,Silica,0,NaN,NaN,NaN,10,NaN,0.5,0.403036316,4.030363164,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,,NaN,NaN,NaN,NaN,NaN
+3,Reference,Chris,Silica,0,NaN,NaN,NaN,15,NaN,0.5,0.402168941,4.021689411,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,,NaN,NaN,NaN,NaN,NaN
+4,Reference,Chris,Silica,0,NaN,NaN,NaN,20,NaN,0.5,0.373016587,3.730165869,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,,NaN,NaN,NaN,NaN,NaN
+5,Reference,Chris,Silica,0,NaN,NaN,NaN,25,NaN,0.5,0.377015419,3.770154193,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,,NaN,NaN,NaN,NaN,NaN
+6,Reference,Chris,Silica,0,NaN,NaN,NaN,30,NaN,0.5,0.34757014,3.475701396,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,,NaN,NaN,NaN,NaN,NaN
+7,Reference,Chris,Silica,0,NaN,NaN,NaN,35,NaN,0.5,0.353765871,3.53765871,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,,NaN,NaN,NaN,NaN,NaN
+8,Reference,Chris,Silica,0,NaN,NaN,NaN,40,NaN,0.5,0.33534736,3.353473598,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,,NaN,NaN,NaN,NaN,NaN
+9,Reference,Chris,Silica,0,NaN,NaN,NaN,45,NaN,0.5,0.302042978,3.020429781,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,,NaN,NaN,NaN,NaN,NaN
