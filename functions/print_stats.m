@@ -7,7 +7,7 @@ function print_stats(stats)
     fprintf('On average, the machine is off by: %.2f%%\n', stats.avg_percent_off);
     fprintf('The average difference is: %.4f dB\n', stats.avg_difference);
     fprintf('-----------------------------------------\n');
-    fprintf('Actual Splice Loss Statistics:\n');
+    fprintf('Actual System Loss Statistics:\n');
     fprintf('  Mean:    %.3f dB\n', stats.mean_loss);
     fprintf('  Std Dev: %.3f dB\n', stats.std_loss);
     fprintf('-----------------------------------------\n');

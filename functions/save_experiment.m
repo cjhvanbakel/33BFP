@@ -1,4 +1,4 @@
-function save_splice_experiment(masterFile, manualData, params)
+function save_experiment(masterFile, manualData, params)
 
     % Load existing file or create empty table
     if isfile(masterFile)

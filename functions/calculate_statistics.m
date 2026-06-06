@@ -19,8 +19,8 @@ function stats = calculate_statistics(data)
     stats.avg_difference = mean(data.Loss_difference, 'omitnan');
     
     % Mean & Median.
-    stats.mean_loss   = mean(spliceData.Splice_loss, 'omitnan');
-    stats.std_loss    = std(spliceData.Splice_loss, 'omitnan');
+    stats.mean_loss   = mean(spliceData.System_loss, 'omitnan');
+    stats.std_loss    = std(spliceData.System_loss, 'omitnan');
     
     % List of Operators for the Performance Tiling.
     stats.unique_who = unique(data.Who);

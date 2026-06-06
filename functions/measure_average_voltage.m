@@ -1,4 +1,4 @@
-function V_avg = measure_average_voltage(mm, measurement_time)
+function [V_avg,voltages] = measure_average_voltage(mm, measurement_time)
 
     voltages = []; % Initialize voltage array.
     t0 = tic;
